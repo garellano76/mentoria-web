@@ -1,3 +1,3 @@
 <?php
 
-echo "este es el archivo basico de DB";
+echo "este es el archivo básico de DB";
