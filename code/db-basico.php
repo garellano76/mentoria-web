@@ -37,7 +37,7 @@ $stmt->execute();
 
 //delete
 $id = 3;
-$stmt = $dp->prepare("DELETE FROM users WHERE id = :id");
+$stmt = $db->prepare("DELETE FROM users WHERE id = :id");
 $stmt->bindparam(':id', $id);
 
 $stmt->execute();
