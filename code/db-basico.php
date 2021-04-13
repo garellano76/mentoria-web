@@ -13,6 +13,7 @@ try {
 }
 
 // Preparar consulta
+/*
 $sql = "INSERT INTO  users 
             (full_name, email, user_name, password)
           VALUES
@@ -32,5 +33,12 @@ $stmt->bindParam(':user_name', $user_name);
 $stmt->bindParam(':password', $password);
 
 $stmt->execute();
+*/
 
+//delete
+$id = 3;
+$stmt = $dp->prepare("DELETE FROM users WHERE id = :id");
+$stmt->bindparam(':id', $id);
+
+$stmt->execute();
 
