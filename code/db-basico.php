@@ -78,7 +78,7 @@ $stmt->bindParam(':password', $password);
                      
 $stmt->execute();
 }
-*/
+
 
 
 
