@@ -12,4 +12,3 @@ function connetDB()
     } catch (PDOException $e){
         echo $e->getmessage();
     }
-{
