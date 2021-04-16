@@ -1,6 +1,9 @@
 <?php
-// Codigo PHP
-echo "Hola Mundo";
+require "util/db.php";
+
+// $db = connectDB();
+
+print_r($_POST);
 
 ?>
 <!DOCTYPE html>
@@ -41,7 +44,7 @@ echo "Hola Mundo";
 			<div class="login100-more" style="background-image: url('images/bg-01.jpg');"></div>
 
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" method="POST" action="index.php"> 
 					<span class="login100-form-title p-b-59">
 						Sign Up
 					</span>
@@ -95,7 +98,7 @@ echo "Hola Mundo";
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn">
+							<button class="login100-form-btn" name="sign-up-button">;
 								Sign Up
 							</button>
 						</div>
