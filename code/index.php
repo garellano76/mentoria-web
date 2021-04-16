@@ -3,7 +3,7 @@ require "util/db.php";
 
 if (isset($_POST['sign-up-button'])) {
   // Se envio el formulario
-  // $db = connectDB();
+  $db = connectDB();
 
   print_r($_POST);
 
@@ -12,7 +12,7 @@ if (isset($_POST['sign-up-button'])) {
   $username = $_POST['username'];
   $pass = $_POST['pass'];
   $repeatPass = $_POST['repeat-pass'];
-  $rememberme = $_POST['remember-me'];
+  $rememberMe = $_POST['remember-me'];
 
   $sql = "INSERT INTO  users 
             (full_name, email, user_name, password)
