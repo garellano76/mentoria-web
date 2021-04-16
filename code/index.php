@@ -19,17 +19,21 @@ if (isset($_POST['sign-up-button'])) {
             (:full_name, :email, :user_name, :password)";
 
 //statement            
+$pass_1 = password_hash($pass, PASSWORD_DEFAULT);
 $stmt = $db->prepare($sql);
 
 $stmt->bindParam(':full_name', $name);
 $stmt->bindParam(':email', $email);
 $stmt->bindParam(':user_name', $username);
-$stmt->bindParam(':password', password_hash($pass, PASSWORD_DEFAULT));
+$stmt->bindParam(':password', $pass_1);
 
 $stmt->execute();
 
 echo "Registro realizado con éxito";
 
+}
+else{
+ echo "Sin envío !";
 }
 
 
