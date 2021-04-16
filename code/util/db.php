@@ -1,6 +1,6 @@
 <?php
 
-function connetDB()
+function connectDB()
 {
     $dbname = "registro";
     $dbuser = "registro-user";
