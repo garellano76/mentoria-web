@@ -1,7 +1,7 @@
 <?php
 
 function connetDB()
-    {
+{
     $dbname = "registro";
     $dbuser = "registro-user";
     $dbpassword = "user1";
@@ -12,3 +12,4 @@ function connetDB()
     } catch (PDOException $e){
         echo $e->getmessage();
     }
+}
