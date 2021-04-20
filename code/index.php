@@ -10,8 +10,8 @@ if (isset($_POST['sign-up-button'])) {
   $email = $_POST['email'];
   $username = $_POST['username'];
   $pass = $_POST['pass'];
-  $repeatPass = $_POST['repeat-pass'];
-  $rememberMe = $_POST['remember-me'];
+  //$repeatPass = $_POST['repeat-pass'];
+  //$rememberMe = $_POST['remember-me'];
 
   $sql = "INSERT INTO  users 
             (full_name, email, user_name, password)
@@ -76,7 +76,7 @@ else{
 			<div class="login100-more" style="background-image: url('images/bg-01.jpg');"></div>
 
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
-				<form class="login100-form validate-form" method="POST" action="index.php"> 
+				<form class="login100-form validate-form" method="POST" action="process.php"> 
 					<span class="login100-form-title p-b-59">
 						Sign Up
 					</span>
