@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_POST("sign-in-button"))){
+if (isset($_POST["sign-in-button"])) {
     $dbname = "registro";
 	$dbuser = "registro-user";
 	$dbpassword = "user1";
