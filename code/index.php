@@ -8,8 +8,8 @@ if (isset($_POST("sign-in-button"))){
 	$db = new mysqli('localhost', $dbuser, $dbpassword, $dbname);
 	$db->set_charset(utf8mb4)
 
-	$username = _POST('username');
-	$password = _POST('pass');
+	$username = _POST['username'];
+	$password = _POST['pass'];
 
 	$sql = "SELECT * FROM users WHERE username = '$username'";
 	$result = $db->query($sql);
