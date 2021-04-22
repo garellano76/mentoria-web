@@ -6,7 +6,7 @@ if (isset($_POST("sign-in-button"))){
 	$dbpassword = "user1";
 
 	$db = new mysqli('localhost', $dbuser, $dbpassword, $dbname);
-	$db->set_charset(utf8mb4)
+	$db->set_charset(utf8mb4);
 
 	$username = $_POST['username'];
 	$password = $_POST['pass'];
