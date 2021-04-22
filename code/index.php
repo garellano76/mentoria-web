@@ -94,7 +94,7 @@ else{
 
                     <?php if ($valido == 1): ?>
 					     <p class="msg-form"><?= $message; ?></p>					
-					<?php endif;?>S
+					<?php endif;?>
 					
 					<div class="wrap-input100 validate-input" data-validate="Name is required">
 						<span class="label-input100">Full Name</span>
