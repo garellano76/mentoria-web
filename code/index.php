@@ -38,7 +38,7 @@ else{
  echo "Sin envío !";
 }
 
-$valido = 1;
+$valido = 0;
 
 ?>
 <!DOCTYPE html>
