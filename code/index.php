@@ -1,3 +1,32 @@
+<?php
+
+if (isset($_POST("sign-in-button"))){
+    $dbname = "registro";
+	$dbuser = "registro-user";
+	$dbpassword = "user1";
+
+	$db = new mysqli('localhost', $dbuser, $dbpassword, $dbname);
+	$db->set_charset(utf8mb4)
+
+	$username = _POST('username');
+	$password = _POST('pass');
+
+	$sql = "SELECT * FROM users WHERE username = '$username'";
+	$result = $db->query($sql);
+
+	if ($result) {
+        //$row = $result->fetch_row()
+		echo "El result existe";
+	} else {
+		echo "El result no existe";
+	}
+
+    echo "$username, $password";
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
