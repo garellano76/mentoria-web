@@ -1,4 +1,6 @@
 <?php
+
+// PDO
 require "util/db.php";
 $db = connectDB();      
 
@@ -18,24 +20,25 @@ if (isset($_POST['sign-up-button'])) {
           VALUES
             (:full_name, :email, :user_name, :password)";
 
-//statement            
-$pass_1 = password_hash($pass, PASSWORD_DEFAULT);
-$stmt = $db->prepare($sql);
+	//statement            
+	$pass_1 = password_hash($pass, PASSWORD_DEFAULT);
+	$stmt = $db->prepare($sql);
 
-$stmt->bindParam(':full_name', $name);
-$stmt->bindParam(':email', $email);
-$stmt->bindParam(':user_name', $username);
-$stmt->bindParam(':password', $pass_1);
+	$stmt->bindParam(':full_name', $name);
+	$stmt->bindParam(':email', $email);
+	$stmt->bindParam(':user_name', $username);
+	$stmt->bindParam(':password', $pass_1);
 
-$stmt->execute();
+	$stmt->execute();
 
-echo "Registro realizado con éxito";
+	echo "Registro realizado con éxito";
 
 }
 else{
  echo "Sin envío !";
 }
 
+$valido = 1;
 
 ?>
 <!DOCTYPE html>
@@ -82,6 +85,10 @@ else{
 						Sign Up
 					</span>
 
+                    <?php if ($valido == 1): ?>
+					     <p>Este es un texto controlado desde PHP</p>
+					<?php endif;?>
+					
 					<div class="wrap-input100 validate-input" data-validate="Name is required">
 						<span class="label-input100">Full Name</span>
 						<input class="input100" type="text" name="name" placeholder="Name...">
