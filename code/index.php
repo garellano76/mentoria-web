@@ -37,6 +37,7 @@ if (isset($_POST['sign-up-button'])) {
 }
 else{
  echo "Sin envío !";
+ $valido = 0;
 }
 
 ?>
