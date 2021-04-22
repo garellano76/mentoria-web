@@ -17,8 +17,8 @@ if (isset($_POST["sign-in-button"])) {
 	$result = $db->query($sql);
 
 	if ($result) {
-        //$row = $result->fetch_row()
-		echo "El result existe";
+        $row = $result->fetch_row()
+		print_r($row);
 	} else {
 		$valido = false;
 	}
