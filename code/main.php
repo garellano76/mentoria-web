@@ -8,8 +8,6 @@ if (!isset($_SESSION['nombre'])){
     header("location: index.php");
 }
 
-// echo "Bienvenido, " . $_SESSION['nombre'];
-
 require "util/db.php";
 $db = connectDB();
 
@@ -18,6 +16,7 @@ $sql = "SELECT * FROM users";
 //statement
 
 $stmt = $db->prepare($sql);
+$stmt->execute();
 $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
