@@ -20,6 +20,11 @@ if (isset($_POST["sign-in-button"])) {
         $row = $result->fetch_assoc();
 
 		if (password_verify($password, $row['password'])) {
+			// inicio de sesiones
+
+			session_start();
+			$_SESSION["nombre"] = $row["full_name"];
+
            header("Location: main.php");
 		} else {
 			$valido = false;
@@ -29,7 +34,7 @@ if (isset($_POST["sign-in-button"])) {
 		$valido = false;
 	}
 
-    echo "$username, $password";
+    //echo "$username, $password";
 }
 
 ?>
