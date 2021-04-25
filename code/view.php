@@ -47,8 +47,8 @@
     <main role="main" class="flex-shrink-0">
         <div class="container">
             <h1>Vista de Usuario GAR</h1>                            
-            </p><?= $_GET['v1'] ?></p>            
-            </p><?= $_GET['v2'] ?></p>                        
+            </p><?= "Nombre: " $_GET['v1']) ?></p>            
+            </p><?= "Email: " $_GET['v2'] ?></p>                        
         </div>
     </main>
       
