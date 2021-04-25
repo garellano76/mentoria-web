@@ -71,11 +71,13 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <th scope="col">Last</th>
                     <th scope="col">Action</th>
                     </tr>
-                </thead>
+                </thead>                
                 <tbody>
+                <?php $row = 0; ?>         
                 <?php foreach ($users as $user): ?>         
                     <tr>
-                    <th scope="row">1</th>
+                    <?php $row = $row + 1; ?>         
+                    <th scope="row">$row</th>
                     <td><?= $user['full_name'] ?></td>            
                     <td><?= $user['email'] ?? 'Sin Correo' ?></td>
                     <td>
