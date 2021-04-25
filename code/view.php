@@ -47,8 +47,8 @@
     <main role="main" class="flex-shrink-0">
         <div class="container">
             <h1>Vista de Usuario GAR</h1>          
-            <td><?= $username ?></td>            
-            <td><?= $email ?? 'Sin Correo' ?></td>
+            <td><?= $_GET["username"] ?></td>            
+            <td><?= $_GET["email"] ?></td>                        
         </div>
     </main>
       
