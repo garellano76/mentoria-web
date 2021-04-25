@@ -76,8 +76,8 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <?php foreach ($users as $user): ?>         
                     <tr>
                     <th scope="row">1</th>
-                    <td>$user['user_name']</td>
-                    <td>$user['email']</td>
+                    <td><?= $user['full_name'] ?></td>            
+                    <td><?= $user['email'] ?? 'Sin Correo' ?></td>
                     <td>
                         <a href="view.html"><button class="btn btn-primary btn-sm">View</button></a>
                         <a href="edit.html"><button class="btn btn-outline-primary btn-sm">Edit</button></a>
