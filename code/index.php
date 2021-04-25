@@ -46,7 +46,7 @@
         
     <main role="main" class="flex-shrink-0">
         <div class="container">
-            <h1>List of User</h1>
+            <h1>Lista de Usuarios GAR</h1>
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
