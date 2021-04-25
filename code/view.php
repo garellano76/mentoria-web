@@ -46,10 +46,7 @@
         
     <main role="main" class="flex-shrink-0">
         <div class="container">
-            <h1>Vista de Usuario GAR</h1>
-            <?php $username = $user['full_name']; ?>
-            <?php $email = $user['email']; ?>
-
+            <h1>Vista de Usuario GAR</h1>          
             <td><?= $username ?></td>            
             <td><?= $email ?? 'Sin Correo' ?></td>
         </div>
