@@ -1,3 +1,19 @@
+<?php
+
+require "util/db.php";
+$db = connectDB();
+
+$sql = "SELECT * FROM users";
+
+//statement
+
+$stmt = $db->prepare($sql);
+$stmt->execute();
+$users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+?>
+
+
 <!doctype html>
 <html lang="en" class="h-100">
   <head>
@@ -57,36 +73,18 @@
                     </tr>
                 </thead>
                 <tbody>
+                <?php foreach ($users as $user): ?>         
                     <tr>
                     <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
+                    <td>$user['user_name']</td>
+                    <td>$user['email']</td>
                     <td>
                         <a href="view.html"><button class="btn btn-primary btn-sm">View</button></a>
                         <a href="edit.html"><button class="btn btn-outline-primary btn-sm">Edit</button></a>
                         <button class="btn btn-sm">Delete</button>
                     </td>
                     </tr>
-                    <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>
-                        <a href="view.html"><button class="btn btn-primary btn-sm">View</button></a>
-                        <a href="edit.html"><button class="btn btn-outline-primary btn-sm">Edit</button></a>
-                        <button class="btn btn-sm">Delete</button>
-                    </td>
-                    </tr>
-                    <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>
-                        <a href="view.html"><button class="btn btn-primary btn-sm">View</button></a>
-                        <a href="edit.html"><button class="btn btn-outline-primary btn-sm">Edit</button></a>
-                        <button class="btn btn-sm">Delete</button>
-                    </td>
-                    </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
