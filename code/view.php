@@ -10,21 +10,21 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
 
-    <title>Lista de Usuarios GAR</title>
+    <title>List of User</title>
    
   </head>
   <body class="d-flex flex-column h-100">
     
     <div class="container pt-4 pb-4">
         <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
-            <a class="navbar-brand" href="#">PLANTILLA HTML PASADO A PHP - CRUD </a>
+            <a class="navbar-brand" href="#">HTML CRUD Template</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
     
             <div class="collapse navbar-collapse" id="navbarsExample09">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
@@ -46,49 +46,9 @@
         
     <main role="main" class="flex-shrink-0">
         <div class="container">
-            <h1>List of User</h1>
-            <table class="table table-striped table-hover">
-                <thead>
-                    <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>
-                        <a href="view.html"><button class="btn btn-primary btn-sm">View</button></a>
-                        <a href="edit.html"><button class="btn btn-outline-primary btn-sm">Edit</button></a>
-                        <button class="btn btn-sm">Delete</button>
-                    </td>
-                    </tr>
-                    <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>
-                        <a href="view.html"><button class="btn btn-primary btn-sm">View</button></a>
-                        <a href="edit.html"><button class="btn btn-outline-primary btn-sm">Edit</button></a>
-                        <button class="btn btn-sm">Delete</button>
-                    </td>
-                    </tr>
-                    <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>
-                        <a href="view.html"><button class="btn btn-primary btn-sm">View</button></a>
-                        <a href="edit.html"><button class="btn btn-outline-primary btn-sm">Edit</button></a>
-                        <button class="btn btn-sm">Delete</button>
-                    </td>
-                    </tr>
-                </tbody>
-            </table>
+            <h1>View User Detail</h1>
+            <p>Name: Pisyek</p>
+            <p>Email: pisyek@gmail.com</p>
         </div>
     </main>
       
