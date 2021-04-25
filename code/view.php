@@ -49,6 +49,7 @@
             <h1>Vista de Usuario GAR</h1>                            
             </p> Nombre: <?= $_GET['v1'] ?></p>            
             </p> Email: <?= $_GET['v2'] ?></p>                        
+            </p> User Name: <?= $_GET['v3'] ?></p>                        
         </div>
     </main>
       
