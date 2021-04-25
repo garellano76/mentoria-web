@@ -46,12 +46,9 @@
         
     <main role="main" class="flex-shrink-0">
         <div class="container">
-            <h1>Vista de Usuario GAR</h1>                 
-            <? $variable1=($_GET['v1']); ?>
-            <? $variable2=($_GET['v2']); ?>
-
-            <td><?= $variable1 ?></td>            
-            <td><?= $variable2 ?></td>                        
+            <h1>Vista de Usuario GAR</h1>                            
+            <td><?= $_GET['v1'] ?></td>            
+            <td><?= $_GET['v2'] ?></td>                        
         </div>
     </main>
       
