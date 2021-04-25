@@ -46,9 +46,9 @@
         
     <main role="main" class="flex-shrink-0">
         <div class="container">
-            <h1>View User Detail</h1>
-            <p>Name: Pisyek</p>
-            <p>Email: pisyek@gmail.com</p>
+            <h1>Vista de Usuario GAR</h1>
+            <td><?= $user['full_name'] ?></td>            
+            <td><?= $user['email'] ?? 'Sin Correo' ?></td>
         </div>
     </main>
       
