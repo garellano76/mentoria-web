@@ -46,9 +46,11 @@
         
     <main role="main" class="flex-shrink-0">
         <div class="container">
-            <h1>Vista de Usuario GAR</h1>          
-            <td><?= $_GET["username"] ?></td>            
-            <td><?= $_GET["email"] ?></td>                        
+            <h1>Vista de Usuario GAR</h1>                 
+            <? $v1=$_GET['username']; ?>
+            <? $v2=$_GET['email']; ?>
+            <td><?= $v1 ?></td>            
+            <td><?= $v2 ?></td>                        
         </div>
     </main>
       
