@@ -72,13 +72,10 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <th scope="col">Acción</th>
                     </tr>
                 </thead>                
-                <tbody>
-                <?php $row = 0; ?>         
+                <tbody>                
                 <?php foreach ($users as $user): ?>         
-                    <tr>
-                    <?php $row = $row + 1; ?>         
-                    <th scope="row"><?= $row ?></th>
-                    
+                    <tr>                    
+                    <th scope="row"><?= $user['id'] ?></th>                    
                     <td><?= $user['full_name'] ?></td>            
                     <td><?= $user['email'] ?? 'Sin Correo' ?></td>
                     <td>  

@@ -60,7 +60,8 @@
                     <label for="usurio">Usuario</label>
                     <input type="text" class="form-control" id="usuario" value=<?= $_GET['v3'] ?> placeholder="Ingrese Usuario">
                     <small class="form-text text-muted">Modifique usuario.</small>
-                </div>
+                </div>               
+
                 <button type="submit" class="btn btn-primary">Guardar Cambios</button>
             </form>
         </div>
