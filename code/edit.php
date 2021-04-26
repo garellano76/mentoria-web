@@ -1,3 +1,29 @@
+<?php
+
+if (isset($_POST["guardarcambios"])) {
+   	$nombre_gar = $_POST['name'];
+	$email_gar = $_POST['email'];
+    $usuario_gar = $_POST['usuario'];    
+
+	$sql ="UPDATE users SET full_name = :full_name, email = :email, user_name = :user_name WHERE ID = :id";
+
+// stament
+$stmt = $db->prepare($sql);
+
+$stmt->bindParam(':full_name', $nombre_gar);
+$stmt->bindParam(':email', $email_gar);
+$stmt->bindParam(':user_name', $usuario_gar);
+$stmt->bindParam(':id', $_GET['v4']);
+                     
+$stmt->execute();
+
+echo "Info de Usuario Actualizada !!!";
+
+}
+
+
+
+?>
 <!doctype html>
 <html lang="en" class="h-100">
   <head>
@@ -62,7 +88,7 @@
                     <small class="form-text text-muted">Modifique usuario.</small>
                 </div>               
 
-                <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                <button type="submit" class="btn btn-primary" name = "guardarcambios">Guardar Cambios</button>
             </form>
         </div>
     </main>
