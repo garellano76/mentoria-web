@@ -1,5 +1,7 @@
 <?php
 
+require "util/db.php";
+
 if (isset($_POST["guardarcambios"])) {
    	$nombre_gar = $_POST['name'];
 	$email_gar = $_POST['email'];
@@ -76,15 +78,15 @@ echo "Info de Usuario Actualizada !!!";
             <form action="" method="POST">
                 <div class="form-group">
                     <label for="name">Nombre</label>
-                    <input type="text" class="form-control" id="name" value=<?= $_GET['v1'] ?> placeholder="Ingrese Nombre">
+                    <input type="text" class="form-control" id="name" name="name" value=<?= $_GET['v1'] ?> placeholder="Ingrese Nombre">
                     <small class="form-text text-muted">Modifique nombre aquí.</small>
 
                     <label for="email">Email</label>
-                    <input type="text" class="form-control" id="email" value=<?= $_GET['v2'] ?> placeholder="Ingrese Email">
+                    <input type="text" class="form-control" id="email" name="email" value=<?= $_GET['v2'] ?> placeholder="Ingrese Email">
                     <small class="form-text text-muted">Modifique email aquí.</small>
 
-                    <label for="usurio">Usuario</label>
-                    <input type="text" class="form-control" id="usuario" value=<?= $_GET['v3'] ?> placeholder="Ingrese Usuario">
+                    <label for="usuario">Usuario</label>
+                    <input type="text" class="form-control" id="usuario" name="usuario" value=<?= $_GET['v3'] ?> placeholder="Ingrese Usuario">
                     <small class="form-text text-muted">Modifique usuario.</small>
                 </div>               
 
