@@ -46,20 +46,20 @@
         
     <main role="main" class="flex-shrink-0">
         <div class="container">
-            <h1>Edit User</h1>
+            <h1>Modificar Usuarios GAR</h1>
             <form action="" method="POST">
                 <div class="form-group">
                     <label for="name">Nombre</label>
                     <input type="text" class="form-control" id="name" value="Nama saya Pisyek" placeholder="Ingrese Nombre">
-                    <small class="form-text text-muted">)Modifique nombre aquí.</small>
+                    <small class="form-text text-muted">Modifique nombre aquí.</small>
 
                     <label for="email">Email</label>
                     <input type="text" class="form-control" id="email" value="Nama saya Pisyek" placeholder="Ingrese Email">
-                    <small class="form-text text-muted">)Modifique email aquí.</small>
+                    <small class="form-text text-muted">Modifique email aquí.</small>
 
                     <label for="usurio">Usuario</label>
                     <input type="text" class="form-control" id="usuario" value="Nama saya Pisyek" placeholder="Ingrese Usuario">
-                    <small class="form-text text-muted">)Modifique usuario.</small>
+                    <small class="form-text text-muted">Modifique usuario.</small>
                 </div>
                 <button type="submit" class="btn btn-primary">Guardar Cambios</button>
             </form>
