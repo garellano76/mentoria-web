@@ -22,8 +22,6 @@ $stmt->execute();
 
 header("Location: index.php");
 
-echo "Info de Usuario Actualizada !!!";
-
 }
 
 
