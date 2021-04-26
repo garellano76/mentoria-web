@@ -50,15 +50,15 @@
             <form action="" method="POST">
                 <div class="form-group">
                     <label for="name">Nombre</label>
-                    <input type="text" class="form-control" id="name" value="Nama saya Pisyek" placeholder="Ingrese Nombre">
+                    <input type="text" class="form-control" id="name" value=<?= $_GET['v1'] ?> placeholder="Ingrese Nombre">
                     <small class="form-text text-muted">Modifique nombre aquí.</small>
 
                     <label for="email">Email</label>
-                    <input type="text" class="form-control" id="email" value="Nama saya Pisyek" placeholder="Ingrese Email">
+                    <input type="text" class="form-control" id="email" value=<?= $_GET['v2'] ?> placeholder="Ingrese Email">
                     <small class="form-text text-muted">Modifique email aquí.</small>
 
                     <label for="usurio">Usuario</label>
-                    <input type="text" class="form-control" id="usuario" value="Nama saya Pisyek" placeholder="Ingrese Usuario">
+                    <input type="text" class="form-control" id="usuario" value=<?= $_GET['v3'] ?> placeholder="Ingrese Usuario">
                     <small class="form-text text-muted">Modifique usuario.</small>
                 </div>
                 <button type="submit" class="btn btn-primary">Guardar Cambios</button>
