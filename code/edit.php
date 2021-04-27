@@ -24,9 +24,8 @@ header("Location: index.php");
 
 }
 
-
-
 ?>
+
 <!doctype html>
 <html lang="en" class="h-100">
   <head>
