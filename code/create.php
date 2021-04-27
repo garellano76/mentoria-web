@@ -9,25 +9,20 @@ if (isset($_POST["crear_gar"])) {
     $pass = $_POST['pass'];    
     $pass_1 = password_hash($pass, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO  users 
-            (full_name, email, user_name, password)
-          VALUES
-            (:full_name, :email, :user_name, :password)";
+    $sql = "INSERT INTO  users (full_name, email, user_name, password) VALUES (:full_name, :email, :user_name, :password)";	
 
-	
+    // stament
+    $db = connectDB();
+    $stmt = $db->prepare($sql);
 
-// stament
-$db = connectDB();
-$stmt = $db->prepare($sql);
+    $stmt->bindParam(':full_name', $nombre_gar);
+    $stmt->bindParam(':email', $email_gar);
+    $stmt->bindParam(':user_name', $usuario_gar);
+    $stmt->bindParam(':id', $pass_1);
+                        
+    $stmt->execute();
 
-$stmt->bindParam(':full_name', $nombre_gar);
-$stmt->bindParam(':email', $email_gar);
-$stmt->bindParam(':user_name', $usuario_gar);
-$stmt->bindParam(':id', $pass_1);
-                     
-$stmt->execute();
-
-header("Location: index.php");
+    header("Location: index.php");
 
 }
 
