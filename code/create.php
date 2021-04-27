@@ -87,19 +87,19 @@ header("Location: index.php");
                 <div class="form-group">                 
 
                     <label for="name">Nombre</label>
-                    <input type="text" name = "name" class="form-control" id="nombre" placeholder="Enter name">
+                    <input type="text" name = "name" class="form-control" id="nombre" placeholder="Ingrese Nombre">
                     <small class="form-text text-muted">Ingrese Nombre aquí.</small>
 
                     <label for="email">Email</label>
-                    <input type="text" name = "email" class="form-control" id="email" placeholder="Enter name">
+                    <input type="text" name = "email" class="form-control" id="email" placeholder="Ingrese Email">
                     <small class="form-text text-muted">Ingrese Email aquí</small>
 
                     <label for="usuario">Usuario</label>
-                    <input type="text" name = "usuario" class="form-control" id="usuario" placeholder="Enter name">
+                    <input type="text" name = "usuario" class="form-control" id="usuario" placeholder="Ingrese Usuario">
                     <small class="form-text text-muted">Ingrese Usuario aquí</small>
 
                     <label for="pass">Password</label>
-                    <input type="text" name = "pass" class="form-control" id="pass" placeholder="Enter name">
+                    <input type="text" name = "pass" class="form-control" id="pass" placeholder="Ingrese Password">
                     <small class="form-text text-muted">Ingrese Password aquí</small>
 
                 </div>
