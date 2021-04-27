@@ -12,8 +12,10 @@ if (isset($_POST['sign-up-button'])) {
   $email = $_POST['email'];
   $username = $_POST['username'];
   $pass = $_POST['pass'];
+
   //$repeatPass = $_POST['repeat-pass'];
   //$rememberMe = $_POST['remember-me'];
+  
   $pass_1 = password_hash($pass, PASSWORD_DEFAULT);
 
   $sql = "INSERT INTO  users 

@@ -1,3 +1,39 @@
+<?php
+
+require "util/db.php";
+
+if (isset($_POST["crear_gar"])) {    
+   	$nombre_gar = $_POST['name'];
+	$email_gar = $_POST['email'];
+    $usuario_gar = $_POST['usuario'];    
+    $pass = $_POST['pass'];    
+    $pass_1 = password_hash($pass, PASSWORD_DEFAULT);
+
+    $sql = "INSERT INTO  users 
+            (full_name, email, user_name, password)
+          VALUES
+            (:full_name, :email, :user_name, :password)";
+
+	
+
+// stament
+$db = connectDB();
+$stmt = $db->prepare($sql);
+
+$stmt->bindParam(':full_name', $nombre_gar);
+$stmt->bindParam(':email', $email_gar);
+$stmt->bindParam(':user_name', $usuario_gar);
+$stmt->bindParam(':id', $pass_1);
+                     
+$stmt->execute();
+
+header("Location: index.php");
+
+}
+
+?>
+
+
 <!doctype html>
 <html lang="en" class="h-100">
   <head>
@@ -10,14 +46,14 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
 
-    <title>List of User</title>
+    <title>Creación Usuarios Nuevos - GAR</title>
    
   </head>
   <body class="d-flex flex-column h-100">
     
     <div class="container pt-4 pb-4">
         <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
-            <a class="navbar-brand" href="#">HTML CRUD Template</a>
+            <a class="navbar-brand" href="#">HTML CRUD Template - GAR</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -46,14 +82,28 @@
         
     <main role="main" class="flex-shrink-0">
         <div class="container">
-            <h1>Create New User</h1>
+            <h1>Creación Usuarios Nuevos - GAR</h1>
             <form action="" method="POST">
-                <div class="form-group">
+                <div class="form-group">                 
+
                     <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" placeholder="Enter name">
-                    <small class="form-text text-muted">Help message here.</small>
+                    <input type="text" name = "name" class="form-control" id="nombre" placeholder="Enter name">
+                    <small class="form-text text-muted">Ingrese Nombre aquí.</small>
+
+                    <label for="email">Name</label>
+                    <input type="text" name = "email" class="form-control" id="email" placeholder="Enter name">
+                    <small class="form-text text-muted">Ingrese Email aquí</small>
+
+                    <label for="usuario">Name</label>
+                    <input type="text" name = "usuario" class="form-control" id="usuario" placeholder="Enter name">
+                    <small class="form-text text-muted">Ingrese Usuario aquí</small>
+
+                    <label for="pass">Name</label>
+                    <input type="text" name = "pass" class="form-control" id="pass" placeholder="Enter name">
+                    <small class="form-text text-muted">Ingrese Password aquí</small>
+
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" name = "crear_gar" class="btn btn-primary">Crear</button>
             </form>
         </div>
     </main>
