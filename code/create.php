@@ -18,7 +18,7 @@ if (isset($_POST["crear_gar"])) {
     $stmt->bindParam(':full_name', $nombre_gar);
     $stmt->bindParam(':email', $email_gar);
     $stmt->bindParam(':user_name', $usuario_gar);
-    $stmt->bindParam(':id', $pass_1);
+    $stmt->bindParam(':password', $pass_1);
                         
     $stmt->execute();
 
