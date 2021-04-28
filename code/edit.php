@@ -23,7 +23,6 @@ if (isset($_POST["guardarcambios"])) {
 
 	$sql ="UPDATE users SET full_name = :full_name, email = :email, user_name = :user_name WHERE ID = :id";    
 
-    echo $sql;
     //$db = connectDB();
     $stmt = $db->prepare($sql);
 
@@ -31,7 +30,9 @@ if (isset($_POST["guardarcambios"])) {
     $stmt->bindParam(':email', $email_gar);
     $stmt->bindParam(':user_name', $usuario_gar);
     $stmt->bindParam(':id', $_GET['v4']);
-                        
+
+    echo $stmt;
+    
     $stmt->execute();
 
     //header("Location: index.php");
