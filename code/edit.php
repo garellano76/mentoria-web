@@ -21,6 +21,10 @@ if (isset($_POST["guardarcambios"])) {
 	$email_gar = $_POST['email'];
     $usuario_gar = $_POST['usuario'];    
 
+    echo $nombre_gar;
+    echo $email_gar;
+    echo $usuario_gar;
+
 	$sql ="UPDATE users SET full_name = :full_name, email = :email, user_name = :user_name WHERE ID = :id";    
 
     //$db = connectDB();
@@ -31,8 +35,6 @@ if (isset($_POST["guardarcambios"])) {
     $stmt->bindParam(':user_name', $usuario_gar);
     $stmt->bindParam(':id', $_GET['v4']);
 
-    echo $stmt;
-    
     $stmt->execute();
 
     //header("Location: index.php");
