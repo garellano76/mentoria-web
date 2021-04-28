@@ -19,25 +19,21 @@ $users = $stmt->fetch();
 if (isset($_POST["guardarcambios"])) {
    	$nombre_gar = $_POST['name'];
 	$email_gar = $_POST['email'];
-    $usuario_gar = $_POST['usuario'];    
-
-    echo $nombre_gar;
-    echo $email_gar;
-    echo $usuario_gar;
+    $usuario_gar = $_POST['usuario'];        
 
 	$sql ="UPDATE users SET full_name = :full_name, email = :email, user_name = :user_name WHERE ID = :id";    
 
-    //$db = connectDB();
+    $db = connectDB();
     $stmt = $db->prepare($sql);
 
     $stmt->bindParam(':full_name', $nombre_gar);
     $stmt->bindParam(':email', $email_gar);
     $stmt->bindParam(':user_name', $usuario_gar);
-    $stmt->bindParam(':id', $_GET['v4']);
+    $stmt->bindParam(':id', $_GET['id']);
 
     $stmt->execute();
 
-    //header("Location: index.php");
+    header("Location: index.php");
 
 }
 
