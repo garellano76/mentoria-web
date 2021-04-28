@@ -64,9 +64,9 @@ $users = $stmt->fetch(PDO::FETCH_ASSOC);
     <main role="main" class="flex-shrink-0">
         <div class="container">
             <h1>Vista de Usuario GAR</h1>                            
-            </p> Nombre: <?= $user['full_name'] ?></p>            
-            </p> Email: <?= $user['email'] ?></p>                        
-            </p> User Name: <?= $user['user_name'] ?></p>                        
+            </p> Nombre: <?= $users['full_name'] ?></p>            
+            </p> Email: <?= $users['email'] ?></p>                        
+            </p> User Name: <?= $users['user_name'] ?></p>                        
         </div>
     </main>
       
