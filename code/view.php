@@ -11,7 +11,7 @@ $stmt = $db->prepare($sql);
 $stmt->execute();
 $stmt->bindParam(':id', $_GET['id']);
 
-$users = $stmt->fetch(PDO::FETCH_ASSOC);
+$users = $stmt->fetch();
 
 ?>
 
