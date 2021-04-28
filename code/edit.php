@@ -2,6 +2,20 @@
 
 require "util/db.php";
 
+$db = connectDB();
+
+$sql = "SELECT * FROM users where id = :id";
+
+//statement
+
+$stmt = $db->prepare($sql);
+$stmt->bindParam(':id', $_GET['id']);
+
+$stmt->execute();
+
+$users = $stmt->fetch();
+
+
 if (isset($_POST["guardarcambios"])) {
    	$nombre_gar = $_POST['name'];
 	$email_gar = $_POST['email'];
@@ -78,15 +92,15 @@ header("Location: index.php");
             <form action="" method="POST">
                 <div class="form-group">
                     <label for="name">Nombre</label>
-                    <input type="text" class="form-control" id="name" name="name" value=<?= $_GET['v1'] ?> placeholder="Ingrese Nombre">
+                    <input type="text" class="form-control" id="name" name="name" value=<?= $users['full_name'] ?> placeholder="Ingrese Nombre">
                     <small class="form-text text-muted">Modifique nombre aquí.</small>
 
                     <label for="email">Email</label>
-                    <input type="text" class="form-control" id="email" name="email" value=<?= $_GET['v2'] ?> placeholder="Ingrese Email">
+                    <input type="text" class="form-control" id="email" name="email" value=<?= $users['email'] ?> placeholder="Ingrese Email">
                     <small class="form-text text-muted">Modifique email aquí.</small>
 
                     <label for="usuario">Usuario</label>
-                    <input type="text" class="form-control" id="usuario" name="usuario" value=<?= $_GET['v3'] ?> placeholder="Ingrese Usuario">
+                    <input type="text" class="form-control" id="usuario" name="usuario" value=<?= $users['user_name'] ?> placeholder="Ingrese Usuario">
                     <small class="form-text text-muted">Modifique usuario.</small>
                 </div>               
 
