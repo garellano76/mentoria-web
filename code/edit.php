@@ -21,10 +21,9 @@ if (isset($_POST["guardarcambios"])) {
 	$email_gar = $_POST['email'];
     $usuario_gar = $_POST['usuario'];    
 
-	$sql ="UPDATE users SET full_name = :full_name, email = :email, user_name = :user_name WHERE ID = :id";
+	$sql ="UPDATE users SET full_name = :full_name, email = :email, user_name = :user_name WHERE ID = :id";    
 
     echo $sql;
-
     //$db = connectDB();
     $stmt = $db->prepare($sql);
 
@@ -35,7 +34,7 @@ if (isset($_POST["guardarcambios"])) {
                         
     $stmt->execute();
 
-    header("Location: index.php");
+    //header("Location: index.php");
 
 }
 
