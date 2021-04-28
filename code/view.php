@@ -8,8 +8,9 @@ $sql = "SELECT * FROM users where id = :id";
 //statement
 
 $stmt = $db->prepare($sql);
-$stmt->execute();
 $stmt->bindParam(':id', $_GET['id']);
+
+$stmt->execute();
 
 $users = $stmt->fetch();
 
