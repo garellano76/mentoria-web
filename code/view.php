@@ -1,3 +1,20 @@
+<?php
+
+require "util/db.php";
+$db = connectDB();
+
+$sql = "SELECT * FROM users where id = :id";
+
+//statement
+
+$stmt = $db->prepare($sql);
+$stmt->execute();
+$stmt->bindParam(':id', $_GET['id']);
+
+$users = $stmt->fetch(PDO::FETCH_ASSOC);
+
+?>
+
 <!doctype html>
 <html lang="en" class="h-100">
   <head>
@@ -47,9 +64,9 @@
     <main role="main" class="flex-shrink-0">
         <div class="container">
             <h1>Vista de Usuario GAR</h1>                            
-            </p> Nombre: <?= $_GET['v1'] ?></p>            
-            </p> Email: <?= $_GET['v2'] ?></p>                        
-            </p> User Name: <?= $_GET['v3'] ?></p>                        
+            </p> Nombre: <?= $user['full_name'] ?></p>            
+            </p> Email: <?= $user['email'] ?></p>                        
+            </p> User Name: <?= $user['user_name'] ?></p>                        
         </div>
     </main>
       
