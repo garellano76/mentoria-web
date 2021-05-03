@@ -12,10 +12,8 @@ $stmt->execute();
 $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 //Exportar a excel
-if(isset($_POST["export_data"])) 
-{
+if (isset($_POST["export_data"])) {
     echo "entré 1";
-
     if(!empty($users)) {    
         echo "entré 2";
         $filename = "users.xls";    
@@ -78,7 +76,7 @@ if(isset($_POST["export_data"]))
                         <a class="nav-link" href="https://pisyek.com/contact">Help</a>
                     </li>
                     <li class="nav-item">
-                        <button type="submit" id="export_data" name='export_data' value="Export to excel" class="btn btn-info">Exportar a Excel</button>
+                        <button type="submit" id="export_data" name="export_data" value="Export to excel" class="btn btn-info">Exportar a Excel</button>
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-md-0">
