@@ -52,6 +52,9 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <li class="nav-item">
                         <a class="nav-link" href="https://pisyek.com/contact">Help</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="excel.php">Exportar a Excel</a>
+                    </li>
                 </ul>
                 <form class="form-inline my-2 my-md-0">
                 <input class="form-control" type="text" placeholder="Search" aria-label="Search">
