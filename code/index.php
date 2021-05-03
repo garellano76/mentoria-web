@@ -12,28 +12,24 @@ $stmt->execute();
 $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 //Exportar a excel
-if (isset($_POST["export_data"])) {
-    echo "entré 1";
-    if(!empty($users)) {    
-        echo "entré 2";
-        $filename = "users.xls";    
-        header("Content-Type: application/vnd.ms-excel");    
-        header("Content-Disposition: attachment; filename=".$filename);    
-        $mostrar_columnas = false;
-        foreach($users as $user) 
-        {   if(!$mostrar_columnas) 
-            {    
-                echo implode("\t", array_keys($user)) . "\n";    
-                $mostrar_columnas = true;    
-            }
-            echo implode("\t", array_values($user)) . "\n";    
+if(isset($_POST["export_data"])) {
+    $filename = "users_".date('Ymd') . ".xls";
+    header("Content-Type: application/vnd.ms-excel");
+    header("Content-Disposition: attachment; filename='$filename'");
+    $show_coloumn = false;
+    if(!empty($users)) {
+        foreach($users as $user) {
+        if(!$show_coloumn) {
+            // display field/column names in first row
+            echo implode("t", array_keys($user)) . "n";
+            $show_coloumn = true;
         }
-        }else
-        {    
-            echo 'No hay datos a exportar';    
-        }    
-        exit;    
+        echo implode("t", array_values($user)) . "n";
+        }   
+    }
+    exit;
 }
+
 ?>
 
 
