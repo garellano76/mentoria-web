@@ -11,6 +11,28 @@ $stmt = $db->prepare($sql);
 $stmt->execute();
 $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+//Exportar a excel
+if(isset($_POST["export_data"])) 
+{
+    if(!empty($users)) {    
+        $filename = "users.xls";    
+        header("Content-Type: application/vnd.ms-excel");    
+        header("Content-Disposition: attachment; filename=".$filename);    
+        $mostrar_columnas = false;
+        foreach($users as $user) 
+        {   if(!$mostrar_columnas) 
+            {    
+                echo implode("\t", array_keys($user)) . "\n";    
+                $mostrar_columnas = true;    
+            }
+            echo implode("\t", array_values($user)) . "\n";    
+        }
+        }else
+        {    
+            echo 'No hay datos a exportar';    
+        }    
+        exit;    
+}
 ?>
 
 
