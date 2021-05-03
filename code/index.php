@@ -11,25 +11,6 @@ $stmt = $db->prepare($sql);
 $stmt->execute();
 $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-//Exportar a excel
-if(isset($_POST["export_data"])) {
-    $filename = "users_".date('Ymd') . ".xls";
-    header("Content-Type: application/vnd.ms-excel");
-    header("Content-Disposition: attachment; filename='$filename'");
-    $show_coloumn = false;
-    if(!empty($users)) {
-        foreach($users as $user) {
-        if(!$show_coloumn) {
-            // display field/column names in first row
-            echo implode("t", array_keys($user)) . "n";
-            $show_coloumn = true;
-        }
-        echo implode("t", array_values($user)) . "n";
-        }   
-    }
-    exit;
-}
-
 ?>
 
 
@@ -71,8 +52,8 @@ if(isset($_POST["export_data"])) {
                     <li class="nav-item">
                         <a class="nav-link" href="https://pisyek.com/contact">Help</a>
                     </li>
-                    <li class="nav-item">                        
-                        <button type="submit" name="export_data" class="btn btn-primary">Exportar a Excel</button>
+                    <li class="nav-item">      
+                        <a class="nav-link" href="excel.php">Exportar a Excel</a>                                          
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-md-0">
