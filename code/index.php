@@ -14,7 +14,10 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 //Exportar a excel
 if(isset($_POST["export_data"])) 
 {
+    echo "entré 1";
+
     if(!empty($users)) {    
+        echo "entré 2";
         $filename = "users.xls";    
         header("Content-Type: application/vnd.ms-excel");    
         header("Content-Disposition: attachment; filename=".$filename);    
