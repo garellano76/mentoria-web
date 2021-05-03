@@ -26,6 +26,14 @@ $sheet->setCellValue('B1', 'FULL_NAME');
 $sheet->setCellValue('C1', 'EMAIL');
 $sheet->setCellValue('D1', 'USER');
 
+foreach($users as $key => $user) {
+    $llave = $key + 2;
+    $sheet->setCellValue('A'.$llave, $user['id']);
+    $sheet->setCellValue('B'.$llave, $user['full_name']);
+    $sheet->setCellValue('C'.$llave, $user['email']);
+    $sheet->setCellValue('D'.$llave, $user['user_name']);
+}
+
 $writer = new Xlsx($spreadsheet);
 header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
 header('Content-Disposition: attachment; filename="hola.xlsx"');
