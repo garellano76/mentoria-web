@@ -37,9 +37,9 @@ foreach($users as $key => $user) {
     $sheet->setCellValue('C'.$llave, $user['email']);
     $sheet->setCellValue('D'.$llave, $user['user_name']);*/
     $sheet->setCellValueByColumnAndRow(1, $llave, $user['id']);
-    $sheet->setCellValueByColumnAndRow(1, $llave, $user['full_name']);
-    $sheet->setCellValueByColumnAndRow(1, $llave, $user['email']);
-    $sheet->setCellValueByColumnAndRow(1, $llave, $user['user_name']);
+    $sheet->setCellValueByColumnAndRow(2, $llave, $user['full_name']);
+    $sheet->setCellValueByColumnAndRow(3, $llave, $user['email']);
+    $sheet->setCellValueByColumnAndRow(4, $llave, $user['user_name']);
 }
 
 $writer = new Xlsx($spreadsheet);
