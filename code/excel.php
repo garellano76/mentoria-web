@@ -44,7 +44,7 @@ foreach($users as $key => $user) {
 
 $writer = new Xlsx($spreadsheet);
 header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-header('Content-Disposition: attachment; filename="hola.xlsx"');
+header('Content-Disposition: attachment; filename="Users.xlsx"');
 $writer->save('php://output');
 
 //Exportar a excel
