@@ -1,5 +1,10 @@
 {
-    "require": {
-        "phpoffice/phpspreadsheet": "^1.17"
-    }
+    "name": "garellano/phpmvc-framework",
+    "authors": [
+        {
+            "name": "Gonzalo Arellano",
+            "email": "gonzalo.arellano@segic.usach.cl"
+        }
+    ],
+    "require": {}
 }
