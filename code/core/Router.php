@@ -32,6 +32,10 @@ class Router
         if ($callback === false){
             return "Not Found";            
         }
+
+        if (is_string($callback)) {
+           return $this->renderView($callback);
+        }
         
         // var_dump($path);
         // var_dump($method);
@@ -39,4 +43,10 @@ class Router
         return call_user_func($callback);
 
     }
+
+    public function renderView($view)
+    {
+        include_once __DIR__ . "../views/$view.php";
+    }
 }
+
