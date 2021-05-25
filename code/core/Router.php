@@ -34,8 +34,7 @@ class Router
 
         if ($callback === false){
             //Application::$app->response->setStatusCode(404);
-            $this->response->setStatusCode(404);
-            return "Not Found";            
+            return $this->response->setStatusCode(404);            
         }
 
         if (is_string($callback)) {
