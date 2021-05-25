@@ -20,6 +20,11 @@ class Router
         $this->routes['get'][$path] = $callback;
     }
 
+    public function post($path, $callback)
+    {
+        $this->routes['post'][$path] = $callback;
+    }
+
     public function resolve()
     {
         /*echo '<pre>';
@@ -34,15 +39,15 @@ class Router
 
         if ($callback === false){
             //Application::$app->response->setStatusCode(404);
-            return $this->response->setStatusCode(404);            
+            $this->response->setStatusCode(404);
+            //return $this->renderContent("Not Found");
+            return $this->renderView("_404");            
         }
 
         if (is_string($callback)) {
+            return $this->renderView($callback);
         }
         
-        // var_dump($path);
-        // var_dump($method);
-
         return call_user_func($callback);
 
     }
