@@ -39,7 +39,6 @@ class Router
         }
 
         if (is_string($callback)) {
-           return $this->renderView($callback);
         }
         
         // var_dump($path);
@@ -47,6 +46,12 @@ class Router
 
         return call_user_func($callback);
 
+    }
+
+    public function renderContent($viewContent)
+    {
+        $layoutContent = $this->layoutContent();
+        return str_replace('{{content}}', $viewContent, $layoutContent);
     }
 
     public function renderView($view)
