@@ -85,7 +85,7 @@ class Router
 
     public function renderOnlyView($view, $params)
     {
-        foreach($params as $indice => $value){
+        foreach($params as $key => $value){
             echo "$key => $value";
         }
         exit;
