@@ -19,7 +19,7 @@
   </div>
   <div class="mb-3">
     <label class="form-label">Confirm Password</label>    
-    <textarea type="password" name="confirmPassword" id="" cols="30" rows="10"></textarea>    
+    <input type="password" name="confirmPassword" class="form-control">    
   </div>
 
   <button type="submit" class="btn btn-primary">Send</button>
