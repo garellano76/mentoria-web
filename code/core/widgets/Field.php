@@ -26,7 +26,7 @@ class Field
              <label class="form-label">%s</label>
              <input type=%s name=%s value=%s class="form-control %s">
 
-             <div class="invlaid-feedback">
+             <div class="invalid-feedback">
                 %s      
             </div>
         </div>
