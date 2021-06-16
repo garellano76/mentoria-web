@@ -4,14 +4,14 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 use app\core\Application;
 
-$dotenv = \Dotenv\Dotenv::createImmutable(dirname(__DIR__));
+$dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
 $dotenv->load();
 
 $config = [
     'db' => [
         'dsn' => $_ENV['DSN'],
         'user' => $_ENV['USER'],
-        'password' => $_ENV['PASSWORD']
+        'password' => $_ENV['PASSWORD'],
     ]
 
 ];
