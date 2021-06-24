@@ -4,21 +4,22 @@ namespace app\models;
 
 use app\core\DbModel;
 
-class RegisterModel extends DbModel
-{
+class RegisterModel extends DbModel {
     public string $firstName = '';
     public string $lastName = '';
     public string $email = '';
     public string $password = '';
     public string $confirmPassword = '';
 
-    public function tableName(): String
-    {
+    public function tableName():string{
         return 'users2';
     }
-    
-    public function save()
-    {
+
+    public function schemaName():string{
+        return 'registro';
+    }
+
+    public function save(){
         $this->password = password_hash($this->password, PASSWORD_DEFAULT);
         return parent::save();
     }
@@ -33,15 +34,13 @@ class RegisterModel extends DbModel
         ];
     }
 
-    public function attributes(): array
-    {
+    /*public function attributes(): array{
         return[
             'firstName',
             'lastName',
             'email',
             'password'
-            //'confirmPassword'
+        ]; // se deben sacar de la bd https://thispointer.com/mysql-get-column-names/
 
-        ];
-    }
+    }*/
 }
