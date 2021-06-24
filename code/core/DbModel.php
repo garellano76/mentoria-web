@@ -12,7 +12,7 @@ abstract class DbModel extends Model
         $pdo = Application::$app->db->pdo;
         $tableName = $this->tableName();
         $attributes = $this->attributes();
-        $params = array_map(fn($attr) => ":attr", $attributes);
+        $params = array_map(fn($attr) => ":$attr", $attributes);
         
         $statement = $pdo->prepare("
             INSERT INTO $tableName
