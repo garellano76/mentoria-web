@@ -43,6 +43,7 @@ abstract class DbModel extends Model{
                 SELECT COLUMN_NAME 
                   FROM INFORMATION_SCHEMA.COLUMNS 
                  WHERE TABLE_SCHEMA = '" . $schemaName . "'
+                   AND EXTRA <> 'auto_increment' 
                    AND TABLE_NAME = '" . $tableName . "'");
         $statement->execute();
 
