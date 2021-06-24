@@ -1,16 +1,15 @@
 <?php
 
-class m0001_initial
-{
+class m00001_initial{
     public function up()
     {        
         $db = \app\core\Application::$app->db;
 
         $sql = "CREATE TABLE `users2` (
             `id` int NOT NULL,
-            `firstname` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-            `lastname` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-            `email` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,            
+            `firstName` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+            `lastName` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+            `email` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
             `password` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL
           ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci";
           
