@@ -39,8 +39,8 @@ class RegisterModel extends DbModel
             'firstName',
             'lastName',
             'email',
-            'password',
-            'confirmPassword'
+            'password'
+            //'confirmPassword'
 
         ];
     }
