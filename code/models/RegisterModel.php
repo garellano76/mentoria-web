@@ -2,17 +2,25 @@
 
 namespace app\models;
 
-use app\core\Model;
+use app\core\DbModel;
 
-class RegisterModel extends Model {
+class RegisterModel extends DbModel
+{
     public string $firstName = '';
     public string $lastName = '';
     public string $email = '';
     public string $password = '';
     public string $confirmPassword = '';
 
-    public function save(){
-
+    public function tableName(): String
+    {
+        return 'users2';
+    }
+    
+    public function save()
+    {
+        $this->password = password_hash($this->password, PASSWORD_DEFAULT);
+        return parent::save();
     }
 
     public function rules(): array {
@@ -22,6 +30,18 @@ class RegisterModel extends Model {
             'email' => [self::RULE_REQUIRED, self::RULE_EMAIL],
             'password' => [self::RULE_REQUIRED, [self::RULE_MIN,'min' => 8]],
             'confirmPassword' => [self::RULE_REQUIRED, [self::RULE_MATCH,'match' => 'password']],
+        ];
+    }
+
+    public function attributes(): array
+    {
+        return[
+            'firstName',
+            'lastName',
+            'email',
+            'password',
+            'confirmPassword'
+
         ];
     }
 }
