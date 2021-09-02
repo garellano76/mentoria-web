@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\File;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 
-class Post
+class PostOld
 {
 
     public string $title;
@@ -38,7 +38,7 @@ class Post
     public static function all(){
         return collect(File::files(resource_path("posts/")))
                 ->map(fn ($file) => YamlFrontMatter::parseFile($file)) // arreglo de documentos
-                ->map(fn ($document) => Post::createFromDocument($document));
+                ->map(fn ($document) => PostOld::createFromDocument($document));
     }
 
     public static function find($slug)
