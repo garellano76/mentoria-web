@@ -15,12 +15,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        User::truncate();        
         User::factory()->create();
+
+        Category::truncate();
         Category::create([
             'name' => 'Personal',
             'slug' => 'personal'
         ]);
-        
+
         Category::create([
             'name' => 'Work',
             'slug' => 'work'
