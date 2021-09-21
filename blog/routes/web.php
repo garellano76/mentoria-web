@@ -18,8 +18,8 @@ use App\Models\Category;
 
 Route::get('/', function () {   
     return view('posts', [
-        'posts' => Post::latest('created_at')
-            ->with('category')
+        'posts' => Post::latest('published_at')
+            ->with(['category', 'author'])
             ->get()
     ]);
 });
