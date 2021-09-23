@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
+use App\Models\User;
 use App\Models\Category;
 
 /*
@@ -34,9 +35,11 @@ Route::get('/category/{category:slug}', function (Category $category) {
     return view ('posts', [
         'posts' => $category->posts,
     ]);
-}); // validacion de caracteres en url-> where('post', '[A-Za-z\_-]+');
-    
+});
 
-//Route::get('/', fn () => view ('welcome'));
-//Route::get('/', fn () => 'Hola Segic');
-//Route::get('/', fn () => ['id' => 7, 'url' => 'http://www.segic.cl']);
+Route::get('/author/{author}', function (User $author) {
+    return view ('posts', [
+        'posts' => $author->posts,
+    ]);     
+});
+ 
