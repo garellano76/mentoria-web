@@ -1,5 +1,3 @@
-<x-layout>
-    <x-slot name="content">
-    Hola Segic!
-    </x-slot>
+<x-layout>    
+    Hola Segic! estoy utilizando la variable slot    
 </x-layout>
