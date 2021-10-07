@@ -33,8 +33,9 @@ Route::get('/post/{post}', function (Post $post) {
 }); // validacion de caracteres en url-> where('post', '[A-Za-z\_-]+');
      
 Route::get('/category/{category:slug}', function (Category $category) {
-    return view ('categories', [
-        'posts' => $category->posts->load(['category', 'author']),            ]);
+    return view ('posts', [
+        'posts' => $category->posts->load(['category', 'author']),
+    ]);
 });
 
 Route::get('/author/{author}', function (User $author) {
