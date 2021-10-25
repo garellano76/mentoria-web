@@ -24,7 +24,7 @@ Route::get('/', function () {
             ->get(),
         'categories' => Category::all()
     ]);
-});
+})->name('home');
 
 Route::get('/post/{post}', function (Post $post) {
     return view ('post', [
