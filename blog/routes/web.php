@@ -16,21 +16,8 @@ use App\Models\Category;
 |
 */
 
-
-Route::get('/', function () {   
-    return view('posts', [
-        'posts' => Post::latest('published_at')
-            ->with(['category', 'author'])
-            ->get(),
-        'categories' => Category::all()
-    ]);
-})->name('home');
-
-Route::get('/post/{post}', function (Post $post) {
-    return view ('post', [
-        'post' => $post,
-    ]);
-}); // validacion de caracteres en url-> where('post', '[A-Za-z\_-]+');
+Route::get('/', [PostController::class, 'index'])->name('home');
+Route::get('/post/{post}', [PostController::class, 'show']);
      
 Route::get('/category/{category:slug}', function (Category $category) {
     return view ('posts', [

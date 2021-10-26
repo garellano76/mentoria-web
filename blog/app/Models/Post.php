@@ -12,10 +12,19 @@ class Post extends Model
 
     //public $fillable = ['title', 'resumen', 'body'];
     public $guarded = ['id'];
+    public $with = ['category', 'author'];
 
     public function getRouteKeyName()
     {
         return 'slug';
+    }
+
+    public function scopeFilter($query, array $filters)
+    {
+        if (isset($filters['search'])) {
+            return $query->where('title', 'like', '%' . $filters['search'] . '%')
+                ->orWhere('resumen', 'like', '%' . $filters['search'] . '%');
+        }
     }
 
     public function category()
