@@ -21,7 +21,7 @@ class Post extends Model
 
     public function scopeFilter($query, array $filters)
     {
-        $query->when(
+        return $query->when(
             isset($filters['search']), 
             fn ($query, $search) =>
             $query->where('title', 'like', "%$search%")
