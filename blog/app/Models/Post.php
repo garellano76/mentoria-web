@@ -21,17 +21,40 @@ class Post extends Model
 
     public function scopeFilter($query, array $filters)
     {
-        /*return $query->when(
-            isset($filters['search']), 
+        return $query->when(
+            ($filters['search']) ?? false, 
             fn ($query, $search) =>
-            $query->where('title', 'like', "%$search%")
-                    ->orWhere('resumen', 'like', "%$search%"));*/
+                $query
+                    ->where('title', 'like', "%$search%")
+                    ->orWhere('resumen', 'like', "%$search%")
+        );
 
-        if ($filters['search'] ?? false) {
-            return $query->where('title', 'like', '%' . $filters['search'] . '%')
-                ->orWhere('resumen', 'like', '%' . $filters['search'] . '%');
-        }
+        /*return $query->when(
+            $filters['category'] ?? false, 
+            fn ($query, $category) =>
+                $query
+                    ->whereExists(function ($query) 
+                    {
+                        $query
+                            ->from('categories')
+                            ->whereColumn('categories.id', 'posts.category_id')
+                            ->where('categories.slug', $category) 
+                    })
+        );*/
+
+        return $query->when(
+            $filters['category'] ?? false,
+            fn($query, $category) =>
+                $query->whereHas('category', fn ($query) =>
+                    $query->where('slug', $category))
+        );
     }
+
+        //if ($filters['search'] ?? false) {
+            //return $query->where('title', 'like', '%' . $filters['search'] . '%')
+              //  ->orWhere('resumen', 'like', '%' . $filters['search'] . '%');
+        //}
+    
 
     public function category()
     {
